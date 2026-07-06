@@ -1,0 +1,46 @@
+# =============================================================================
+# Requirements for RASA Action Server
+# =============================================================================
+
+# RASA SDK
+rasa-sdk==3.6.2
+
+# Async HTTP client
+aiohttp==3.9.5
+aiofiles==23.2.1
+
+# Database
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+
+# Redis
+redis==4.6.0
+
+# Vector store - HTTP client with embedding support
+chromadb==0.5.23
+numpy==1.26.4
+
+# Embedding model (required for ChromaDB DefaultEmbeddingFunction)
+onnxruntime>=1.14.0
+tokenizers>=0.13.0
+
+# Data validation
+pydantic==2.9.2
+
+# Content parsing
+beautifulsoup4==4.12.3
+lxml==5.2.2
+markdown==3.6
+html2text==2024.2.26
+
+# Utilities
+python-dateutil==2.9.0.post0
+pytz==2024.1
+
+# Logging and monitoring
+structlog==24.4.0
+
+# LLM providers
+openai==1.57.0
+anthropic==0.45.0
+httpx==0.28.1

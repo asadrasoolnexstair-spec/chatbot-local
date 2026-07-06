@@ -1,0 +1,52 @@
+version: "3.1"
+
+stories:
+# =============================================================================
+# SIMPLE STORIES - Basic conversation flows
+# =============================================================================
+
+- story: greeting and goodbye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: greeting then ask hours
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_hours
+  - action: utter_provide_hours
+
+- story: ask services then pricing
+  steps:
+  - intent: ask_services
+  - action: utter_provide_services
+  - intent: ask_pricing
+  - action: utter_provide_pricing
+
+- story: ask questions then thank and leave
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_services
+  - action: utter_provide_services
+  - intent: thank_you
+  - action: utter_thank_you_response
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: happy user path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: unhappy user needs help
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - intent: ask_contact
+  - action: utter_provide_contact

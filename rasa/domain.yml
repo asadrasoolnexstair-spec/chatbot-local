@@ -1,0 +1,169 @@
+version: '3.1'
+intents:
+- greet
+- goodbye
+- thank_you
+- affirm
+- deny
+- bot_challenge
+- mood_great
+- mood_unhappy
+- ask_business_info
+- ask_pricing
+- ask_hours
+- ask_location
+- ask_policy
+- ask_services
+- ask_faq
+- ask_contact
+- ask_knowledge_base
+- out_of_scope
+- nlu_fallback
+- ask_shipping_info
+- ask_service_detail
+entities:
+- info_type
+slots:
+  info_type:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: info_type
+  llm_response:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+responses:
+  utter_greet:
+  - text: Hello! 👋 Welcome! I'm here to help you with information about our services. What can I do for you today?
+  - text: Hi there! 👋 I'm your virtual assistant. How can I help you?
+  utter_goodbye:
+  - text: Goodbye! Have a great day! 👋
+  - text: Bye! Feel free to come back if you have more questions.
+  utter_thank_you_response:
+  - text: You're welcome! Is there anything else I can help you with?
+  - text: Happy to help! Let me know if you need anything else.
+  utter_iamabot:
+  - text: I'm a virtual assistant chatbot, here to help you with questions about our business.
+  utter_happy:
+  - text: Great to hear! 😊 How can I assist you today?
+  utter_cheer_up:
+  - text: I'm sorry to hear that. 😔 Let me know how I can help make things better.
+  utter_default:
+  - text: I'm not sure I have an answer for that. You can try rephrasing, ask about our services/pricing/hours, or contact us directly.
+  - text: I didn't quite catch that. Feel free to ask about our services, pricing, location, or contact details!
+  utter_out_of_scope:
+  - text: I can only help with questions about our business, services, and appointments. Is there something else I can help you with?
+  utter_provide_contact:
+  - text: 'You can reach us at:
+
+      📧 Email: support@example.com
+
+      📞 Phone: (555) 123-4567
+
+      🌐 Website: www.example.com'
+  utter_provide_hours:
+  - text: We're open Monday to Friday, 9 AM to 6 PM. We're closed on weekends and holidays.
+  utter_provide_services:
+  - text: 'We offer the following services:
+
+      • Consultation - Expert advice sessions
+
+      • Demo - Product demonstrations
+
+      • Support - Technical assistance
+
+      Would you like more details about any of these?'
+  utter_provide_service_detail:
+  - text: 'Here are details about our services:
+
+      • **Consultation** ($50/hr) - Expert advice and strategic planning for your business needs. Book a session to discuss your goals.
+
+      • **Demo** (Free) - Hands-on demonstrations of our solutions. See how we can help before committing.
+
+      • **Support** ($75/hr) - Technical and business support to help you succeed.
+
+      Would you like to book any of these? Contact us at (555) 123-4567.'
+  utter_provide_pricing:
+  - text: 'Our pricing varies by service:
+
+      • Consultation: $50/hour
+
+      • Demo: Free
+
+      • Support: $75/hour
+
+      Contact us for a custom quote!'
+  utter_provide_location:
+  - text: 'We''re located at:
+
+      📍 123 Business Street, Suite 100
+
+      City, State 12345
+
+
+      You can find us on Google Maps.'
+  utter_provide_policy:
+  - text: 'Our policies:
+
+      • Cancellation: Free up to 24 hours before
+
+      • Refunds: Processed within 5-7 business days
+
+      • Privacy: We never share your data
+
+
+      Need more details on any policy?'
+  utter_faq_response:
+  - text: 'Here are some common questions:
+
+      • What services do you offer?
+
+      • What are your hours?
+
+      • How can I contact you?
+
+
+      Ask me any of these!'
+  utter_ask_knowledge_base:
+  - text: Let me search our knowledge base for that information...
+  utter_llm_thinking:
+  - text: Let me think about that...
+  utter_llm_unavailable:
+  - text: I'm sorry, I can't provide an AI-powered response right now. Please try rephrasing your question or contact support.
+  utter_no_answer_found:
+  - text: I couldn't find a specific answer to that in my knowledge base. Could you try rephrasing, or contact us directly for assistance?
+  utter_ask_clarification:
+  - text: Could you please clarify your question? I want to make sure I give you the most accurate answer.
+actions:
+- utter_greet
+- utter_goodbye
+- utter_thank_you_response
+- utter_iamabot
+- utter_happy
+- utter_cheer_up
+- utter_default
+- utter_out_of_scope
+- utter_provide_contact
+- utter_provide_hours
+- utter_provide_services
+- utter_provide_pricing
+- utter_provide_location
+- utter_provide_policy
+- utter_faq_response
+- utter_ask_knowledge_base
+- utter_llm_thinking
+- utter_llm_unavailable
+- utter_no_answer_found
+- utter_ask_clarification
+- action_answer_from_knowledge_base
+- action_llm_response
+- action_llm_fallback
+- action_answer_question
+- action_search_knowledge_base
+- utter_provide_service_detail
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

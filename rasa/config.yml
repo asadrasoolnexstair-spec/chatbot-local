@@ -1,0 +1,28 @@
+# Simple RASA Configuration for Testing
+recipe: default.v1
+language: en
+
+pipeline:
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
+- name: DIETClassifier
+  epochs: 50
+- name: EntitySynonymMapper
+- name: FallbackClassifier
+  threshold: 0.5
+  ambiguity_threshold: 0.15
+
+policies:
+- name: MemoizationPolicy
+  max_history: 5
+- name: RulePolicy
+- name: TEDPolicy
+  max_history: 5
+  epochs: 50
+assistant_id: 20260131-072735-glowing-hyperparameter

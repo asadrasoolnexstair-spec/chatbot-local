@@ -1,0 +1,96 @@
+version: "3.1"
+
+rules:
+# =============================================================================
+# SIMPLE RULES - Basic responses for testing
+# =============================================================================
+
+- rule: Greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Respond to thanks
+  steps:
+  - intent: thank_you
+  - action: utter_thank_you_response
+
+- rule: Respond to bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Respond to happy mood
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+- rule: Respond to unhappy mood
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+
+- rule: Answer hours question
+  steps:
+  - intent: ask_hours
+  - action: utter_provide_hours
+
+- rule: Answer pricing question
+  steps:
+  - intent: ask_pricing
+  - action: utter_provide_pricing
+
+- rule: Answer location question
+  steps:
+  - intent: ask_location
+  - action: utter_provide_location
+
+- rule: Answer services question
+  steps:
+  - intent: ask_services
+  - action: utter_provide_services
+
+- rule: Answer policy question
+  steps:
+  - intent: ask_policy
+  - action: utter_provide_policy
+
+- rule: Answer contact question
+  steps:
+  - intent: ask_contact
+  - action: utter_provide_contact
+
+- rule: Answer business info question
+  steps:
+  - intent: ask_business_info
+  - action: utter_provide_services
+
+- rule: Answer FAQ question
+  steps:
+  - intent: ask_faq
+  - action: utter_faq_response
+
+- rule: Handle out of scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: Handle fallback with LLM
+  steps:
+  - intent: nlu_fallback
+  - action: action_llm_fallback
+
+- rule: Answer from knowledge base
+  steps:
+  - intent: ask_knowledge_base
+  - action: action_answer_from_knowledge_base
+
+- rule: Answer service detail question
+  steps:
+  - intent: ask_service_detail
+  - action: utter_provide_service_detail

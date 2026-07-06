@@ -1,0 +1,50 @@
+# =============================================================================
+# Requirements for Admin API Server
+# =============================================================================
+
+# FastAPI framework
+fastapi==0.115.0
+uvicorn[standard]==0.30.1
+
+# Database
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+
+# Redis
+redis==4.6.0
+
+# Data validation
+pydantic[email]==2.9.2
+
+# Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.9
+PyJWT==2.8.0
+
+# HTTP client
+httpx>=0.28.1,<1.0
+
+# Utilities
+python-dateutil==2.9.0.post0
+pytz==2024.1
+
+# File handling
+aiofiles==23.2.1
+PyPDF2==3.0.1
+
+# Vector store - HTTP client only (server runs in its own container)
+chromadb==0.5.23
+numpy==1.26.4
+
+# Content parsing
+beautifulsoup4==4.12.3
+lxml==5.2.2
+
+# Web scraping (bypass bot protection)
+cloudscraper==1.2.71
+
+# LLM providers
+openai==1.57.0
+anthropic==0.45.0
+google-genai==1.15.0
